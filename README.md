@@ -1,56 +1,94 @@
-# skyblock farming macro (ahk v2)
+<div align="center">
 
-tiny lane-walker macro for farming that alternates **a/d** lanes and can **hold attack** while moving.
-it opens a lil config window on launch so you can set timings + hotkeys.
+# ♡ skyblock farming macro (ahk v2)
 
-> **note:** automation can get you muted/banned depending on server rules + how obvious it is. use at your own risk.
+simple **AutoHotkey v2** farming macro for **hypixel skyblock**.  
+**static script only** (no installer), just **.ahk**.
+
+![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2-2b2b2b?style=for-the-badge)
+![Windows](https://img.shields.io/badge/Windows-only-0b0b0b?style=for-the-badge)
+![Macro](https://img.shields.io/badge/type-farming_macro-ff78c8?style=for-the-badge)
+
+</div>
+
+---
+
+## what is this?
+
+this macro alternates **A / D** movement on a timer (lane swapping)  
+and can optionally **hold attack** while moving.
+
+**main file:** `farming-macro.ahk`
+
+---
 
 ## features
-- gui config on startup (hotkeys, timings, jitter, debug hud)
-- lane timer + between-lane delay
-- optional loop + respawn delay
-- attack hold with keepalive taps (helps when some games stop “held click” from registering)
+
+- startup **config gui** (hotkeys + timings)
+- lane timer (minutes) + between-lane delay (seconds)
+- optional **hold attack**
+- optional **keepalive** taps (for setups that drop held clicks)
+- optional **loop / respawn delay**
+- optional **debug hud** overlay
+
+---
 
 ## requirements
+
 - **windows**
-- **AutoHotkey v2.0+** (the script has `#Requires AutoHotkey v2.0`)
+- **AutoHotkey v2.0+**
+
+---
 
 ## quick start
-1. install **AutoHotkey v2** (not v1)
-2. download this repo (green “code” button → download zip)
-3. double-click `farming-macro.ahk`
-4. in the config window, set your keys + timings
-5. press your **start key** in-game
+
+1) install **AutoHotkey v2**  
+2) run `farming-macro.ahk`  
+3) set your keys + timings in the config window  
+4) open minecraft and press your **start** key
+
+---
 
 ## default hotkeys
-- **start / resume:** `F10`
-- **pause / unpause:** `F7`
-- **stop + reset:** `F8`
 
-(you can change these in the gui)
+- **start / resume:** `F10`  
+- **pause / unpause:** `F7`  
+- **stop + reset:** `F8`  
 
-## how it works (tldr)
-- phase `move`: holds **a** or **d** for `lane minutes` (last lane uses `last lane minutes`)
-- phase `between`: stops moving for `between seconds`, flips direction, goes again
-- optional `loop forever`: after final lane, holds right during `respawn seconds`, then restarts
+(change in the gui)
+
+---
+
+## how it works
+
+- **move phase:** holds **A** or **D** for `lane minutes`  
+- **between phase:** stops for `between seconds`, flips direction  
+- if **loop** is on, it waits `respawn seconds` after the last lane, then restarts
+
+---
 
 ## config notes
-- **attack key** default is `LButton`
-- **hold attack while moving** toggles continuous attack
-- **attack keepalive (ms)**: if > 0, re-sends “down” every N ms (some setups need this)
 
-## debug hud
-set **debug hud** on to show a small click-through overlay with:
-lane / phase / direction / time left / running state.
+- **attack key** default: `LButton`
+- **keepalive (ms):** if set, it re-sends “attack down” every N ms
 
-## folder layout
-- `farming-macro.ahk` - main script
+---
 
-## safety / etiquette
-if you’re gonna use automation, at least:
-- keep jitter on (small randomness)
-- don’t brag about it
-- don’t run it unattended
+## run locally / edit
 
-## credits
-made by bella (:
+open `farming-macro.ahk` in any text editor and change values.  
+AutoHotkey v2 is required to run it.
+
+---
+
+## notes
+
+- don’t run this unattended
+- if it feels “stuttery”, increase between-lane delay slightly
+- if held attack randomly stops, enable keepalive or raise its interval
+
+---
+
+## status
+
+works for my setup, still getting tweaks over time. (:3)
